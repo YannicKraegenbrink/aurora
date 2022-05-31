@@ -17,7 +17,7 @@ import { faPlayCircle } from '@fortawesome/free-solid-svg-icons'
 
 export default function SongList(): JSX.Element {
 
-    const Songs = ['song 1', 'song 2', 'song 3', 'song 4', 'song 5', 'song 6', 'song 7', 'song 8', 'song 9', 'song 10'];
+    const Songs = ['Hidden Gem All Rounder Unique Jazzy Jam Vol. 1(https://www.youtube.com/watch?v=SoBAQgl0zbo)', 'song 2', 'song 3', 'song 4', 'song 5', 'song 6', 'song 7', 'song 8', 'song 9', 'song 10'];
 
     /*Hide Items*/
     function handleMouseEnter() {

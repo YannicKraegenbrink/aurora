@@ -59,7 +59,7 @@ export default function Player(): JSX.Element {
         <>
             <div className="Player">
                 <div className="Link">
-                    <IconButton onClick={paste}>
+                    <IconButton onClick={paste} color="primary">
                         <FontAwesomeIcon icon={faPaste} />
                     </IconButton>
                     {isPaste == true &&
