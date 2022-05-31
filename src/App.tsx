@@ -1,25 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Playlists from './components/playlists';
+import ItemMenu from './components/itemMenu';
+import SongList from './components/songList';
+import Player from './components/player';
+
+import Divider from '@mui/material/Divider';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="Main">
+        <div className="Sideview">
+          <ItemMenu></ItemMenu>
+          <Divider></Divider>
+          <Playlists></Playlists>
+        </div>
+        <div className="Songlist">
+          <SongList></SongList>
+        </div>
+        <div className="Player">
+          <Player></Player>
+        </div>
+      </div>
+
+    </>
+
   );
 }
 
