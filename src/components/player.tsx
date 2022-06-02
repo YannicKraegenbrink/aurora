@@ -7,7 +7,7 @@ import Slider from '@mui/material/Slider';
 import TextField from '@mui/material/TextField';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlayCircle, faPauseCircle, faPaste } from '@fortawesome/free-solid-svg-icons'
+import { faPlayCircle, faPauseCircle, faPaste, faVolumeUp } from '@fortawesome/free-solid-svg-icons'
 
 
 
@@ -54,6 +54,16 @@ export default function Player(): JSX.Element {
 
     }
 
+    const [isVolumeIcon, setVolumeIcon] = useState(false);
+
+    function volumeIcon() {
+        if (isVolumeIcon) {
+            setVolumeIcon(false);
+        }
+        if (!isVolumeIcon) {
+            setVolumeIcon(true);
+        }
+    }
 
     return (
         <>
@@ -69,14 +79,16 @@ export default function Player(): JSX.Element {
                 <ReactPlayer url={textInput}
                     playing={PlayPause}
                     volume={trueVolume}
-                    controls={true} />
+                    controls={false} />
                 <div className="Controls">
                     <IconButton onClick={playPauseAudio} color="primary" size="large">
-                        {PlayPause == true && <FontAwesomeIcon icon={faPlayCircle} />}
-                        {PlayPause == false && <FontAwesomeIcon icon={faPauseCircle} />}
+                        {PlayPause == true && <FontAwesomeIcon icon={faPauseCircle} />}
+                        {PlayPause == false && <FontAwesomeIcon icon={faPlayCircle} />}
                     </IconButton>
-
-                    <Slider aria-label="Volume" value={volume} onChange={handleChange} />
+                    <IconButton onClick={volumeIcon}>
+                        <FontAwesomeIcon icon={faVolumeUp} color="primary" />
+                    </IconButton>
+                    {isVolumeIcon == true && <Slider aria-label="Volume" value={volume} onChange={handleChange} />}
                 </div>
             </div>
         </>
